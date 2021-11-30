@@ -1,5 +1,5 @@
 # curly-queue
-Send an http request with curl and it's scheduled to run via sqs. Allows you to make long running http requests to any endpoint reachable from your container. Can be run as a background process(just run start.sh), a standalone container or as a sidecar container.
+Schedule an http request to be run with cURL and coordinate via an sqs queue. Allows you to make long running http requests to any endpoint reachable from your container. Can be run as a background process(just run start.sh), a standalone container or as a sidecar container.
 
 ## Requirements
 - docker
