@@ -6,6 +6,10 @@ Container for running a curl script that is scheudled to run via sqs. Allowss yo
 - aws cli installed locally
 - docker-compose(for local testing)
 
+### Docker
+
+The dockerfile has most of the utilities needed to run the script but will need some configuration to be able to connect to a localstack sqs queue instead of a real one. It's fairly close but a WIP. 
+
 
 ### Local Testing
 
