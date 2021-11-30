@@ -1,8 +1,12 @@
 #!/bin/bash
+
+#TODO: convert some of these to environment variables to simplify and make more configurable via container
+
+# polling interval before we try to check the SQS queue
 POLL=2
 
 # should set so the max request time for the curl call and the visbility timeout are close. that way when the request times out, the sqs message gets sent back to the queue
-MAX_PROCESS_TIME=5
+MAX_PROCESS_TIME=10
 
 # make the cURL request cutoff slightly before the visibility timeout
 MAX_CURL_REQUEST_WAIT="$(($MAX_PROCESS_TIME-1))"
