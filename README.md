@@ -1,5 +1,5 @@
 # curly-queue
-Container for running a curl script that is scheudled to run via sqs. Allowss you to make long running http requests to any endpoint reachable from your container. Can be ride as a script as a background process, a standalone container or as a sidecar.
+Container for running a curl script that is scheudled to run via sqs. Allows you to make long running http requests to any endpoint reachable from your container. Can be run as a background process(just run start.sh), a standalone container or as a sidecar container.
 
 ## Requirements
 - docker
@@ -34,6 +34,8 @@ in another terminal tab, run the start script
 sh start.sh 'https://google.com'
 
 ```
+
+You can start up multiple instances of `start.sh` and each instance will coordinate executing the curl commands through SQS and clearing the queue once its done.
 
 To try it out with a slow running HTTP request, try to forward the URL through a time delay proxy(in milliseconds), with the command below. Note: its useful for testing out time delays but anything beyond a minute you will need to run your own slow running proxy the service rate limits.
 ```
