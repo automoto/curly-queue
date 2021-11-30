@@ -34,7 +34,7 @@ while sleep $POLL; do \
 		else 
 			echo "cURL Request completed succesfully with http status $CURL_STATUS"
 			echo "Deleting Message From Queue $RCPT_HNDL";
-			aws sqs delete-message --endpoint-url http://localhost:4566 --queue-url 'http://localhost:4566/000000000000/myqueue' --receipt-handle $RCPT_HNDL;
+			aws sqs delete-message --endpoint-url $ENDPOINT_URL --queue-url $QUEUE_URL --receipt-handle $RCPT_HNDL;
 		fi
 	fi
 	echo "polling $POLL seconds..."
